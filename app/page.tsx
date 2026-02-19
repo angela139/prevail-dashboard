@@ -38,17 +38,69 @@ export default function Home() {
 
         {/* Methods Section */}
         <section id="methods" className="py-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-green pb-3">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-sdge-navy border-b-4 border-sdge-green pb-3">
             Methods
           </h2>
-          <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
-            Describe your approach to solving the problem. Focus on the big
-            picture rather than technical details.
+          
+          <p className="text-lg md:text-xl mb-8 text-gray-700 leading-relaxed">
+            To build a system capable of predicting future grid vulnerabilities and crew sizes, we designed a two-stage artificial intelligence pipeline. This required a robust data engineering process to combine weather telemetry with human dispatch records.
           </p>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            You can use dropdown sections or expandable content for more
-            technical details if needed.
-          </p>
+
+          {/* Data Collection */}
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold mb-4 text-sdge-navy">Data Collection & Preparation</h3>
+            <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
+              Our project integrates three distinct, high-volume datasets provided by SDG&E spanning from 2014 to 2024. First, we utilized Historical Outage Data (OMS), containing over 460,000 records that serve as our &quot;ground truth&quot; for when and where the grid failed. Second, to understand the human response, we used Resource Allocation Logs (SORT), which track the exact number of personnel dispatched. Finally, we integrated Meteorological Sensor Data featuring over 75 million hourly readings of wind gusts, sustained wind speed, temperature, and humidity.
+            </p>
+            <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
+              Because the human dispatch logs were tracked by ZIP code rather than exact GPS coordinates, we engineered a spatial proxy to link these dispatch records to the exact outages within a shared 12-hour response window. This allowed us to successfully recover over 1,500 labeled instances of high-impact storm responses.
+            </p>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              To standardize all of this data, we mapped all spatial locations into a uniform &quot;honeycomb&quot; grid using H3 hexagons. We aggregated our weather data to the hourly level and established dynamic, percentile-based thresholds to flag &quot;extreme&quot; weather hours. To ensure our models could actually predict the <em>future</em>, we structured our targets to look ahead, training the system to learn the atmospheric conditions 1, 3, 6, 12, or 24 hours <em>before</em> an outage actually commenced.
+            </p>
+          </div>
+
+          {/* Stage 1 */}
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold mb-4 text-sdge-navy">Stage 1: Predicting Weather-Related Outages</h3>
+            <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
+              The first component of our predictive framework is a classification model designed to act as a &quot;weather filter.&quot; Before we can predict crew size, we must forecast if a weather-related outage will actually happen.
+            </p>
+            <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
+              During our initial testing, we found that aggregating weather by the week smoothed out sudden, violent storm spikes, so we pivoted to daily aggregation. We engineered specific features to capture the physical drivers of grid failure, such as the absolute change in temperature from the previous day, and the interaction between high wind and high heat (which causes power lines to sag and sway into each other). We also added spatial awareness to the model so it could recognize if neighboring hexagons were experiencing high winds.
+            </p>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              We utilized an XGBoost model for this task. A critical challenge in outage prediction is the asymmetry of real-world costs: a False Positive (predicting an outage that doesn&apos;t happen) just results in minor standby costs, but a False Negative (missing an actual storm outage) results in massive operational disruptions. To solve this, we applied an imbalance ratio to our model, mathematically penalizing the AI much more harshly for missing an outage than for raising a false alarm.
+            </p>
+          </div>
+
+          {/* Stage 2 */}
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold mb-4 text-sdge-navy">Stage 2: Predicting Crew Size</h3>
+            <p className="text-lg md:text-xl mb-6 text-gray-700 leading-relaxed">
+              Once a high-risk time window is identified, our framework shifts to resource quantification. We tested two different modeling approaches to see which provided the best operational utility.
+            </p>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-6">
+              <h4 className="text-xl font-bold mb-3 text-sdge-navy">Approach 1: Initial Dispatch Response</h4>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                This pipeline focused on predicting the initial crew size required for a specific outage right when it happens. We started with a linear LASSO regression model to filter out noisy variables, establishing a baseline error of 1.02 crew members. Because crew sizes are distinct counts, we transitioned to a Gradient Boosting Regressor utilizing a &quot;Poisson&quot; objective function, which is specifically designed for whole-number count data.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Finally, we combined both models into a Stacking Ensemble. By feeding the predictions of both the linear and non-linear models into a final meta-learner, we smoothed out the biases of each, achieving an excellent operational accuracy of roughly 70% (predicting the exact dispatch size within a safe tolerance of ±1 person).
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <h4 className="text-xl font-bold mb-3 text-sdge-navy">Approach 2: Cumulative Job Volume</h4>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                Instead of just looking at the first truck sent out, our second pipeline estimated the <em>total</em> workforce burden generated over the entire lifespan of an outage. We aggregated all overlapping repair jobs associated with an event to calculate a cumulative resource count.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                We established an ElasticNet regression baseline, which struggled with the complex, non-linear dynamics of weather and job duration. We then transitioned to a Random Forest Regressor comprised of 200 decision trees. To handle massive outliers, we log-transformed the target variable and engineered specific severity flags for keywords like &quot;Lightning&quot; and &quot;Wind.&quot; This high-flexibility model successfully captured the drivers of total workforce volume, drastically reducing our prediction error down to just 0.511 crew members.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Results Section */}
