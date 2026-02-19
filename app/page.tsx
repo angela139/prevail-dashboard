@@ -18,14 +18,21 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
             Introduction
           </h2>
+          
           <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
-            Explain the problem you&apos;re addressing and why it matters. Keep
-            it accessible to a general audience - think about explaining this to
-            your friends and family.
+            Extreme weather events are the single largest cause of power outages in the United States, costing an estimated $20 to $55 billion annually. For utility operators like San Diego Gas & Electric (SDG&E), the challenge is not just preventing these outages, but responding to them efficiently when they inevitably occur. Currently, the industry standard for severe weather response is largely reactive: utilities often wait for a customer to report a &quot;lights out&quot; event before a repair crew is assigned and dispatched.
           </p>
+
+          <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
+            This &quot;wait-and-see&quot; approach creates significant operational bottlenecks. If an operator underestimates a storm&apos;s severity, crews are scrambled at the last minute, delaying restoration and increasing safety risks for the public. Conversely, if they overestimate the danger, contract crews sit idle on standby, racking up unnecessary costs that are ultimately passed on to the community.
+          </p>
+
+          <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
+            While recent advancements in machine learning have successfully modeled <em>where</em> and <em>when</em> an outage might occur, there is a massive gap in the research regarding the &quot;input side&quot; of the restoration equation: the specific human labor resources required to fix it. Existing models can predict a grid failure, but they fail to quantify how many people need to be sent in the truck.
+          </p>
+
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            What motivated this project? Why should people care about this
-            problem?
+            To address this gap, we created <strong>PREVAIL</strong> (Predictive Response for Emergency Volume Assessment in Incident Locations). PREVAIL transitions the decision-making process from reactive to proactive. By explicitly predicting the specific crew size required for impending weather-driven outages over a weekly planning window, we aim to optimize resource allocation before the weather event even makes landfall.
           </p>
         </section>
 
