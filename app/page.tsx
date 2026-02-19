@@ -36,7 +36,7 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Transition Image: Map of Outages */}
+        {/* Map of Outages */}
         <div className="my-12 bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-200">
           <img 
             src="prevail_outage_map.png" 
@@ -111,6 +111,18 @@ export default function Home() {
               <p className="text-lg text-gray-700 leading-relaxed">
                 We established an ElasticNet regression baseline, which struggled with the complex, non-linear dynamics of weather and job duration. We then transitioned to a Random Forest Regressor comprised of 200 decision trees. To handle massive outliers, we log-transformed the target variable and engineered specific severity flags for keywords like &quot;Lightning&quot; and &quot;Wind.&quot; This high-flexibility model successfully captured the drivers of total workforce volume, drastically reducing our prediction MAE down to just 0.511 crew members.
               </p>
+
+              {/* Image of Crew Size Model Accuracy*/}
+              <div className="my-4 bg-white rounded-lg">
+                <img 
+                  src="prevail_crew_size_model_accuracy.png" 
+                  alt="Predicted vs. Actual Crew Size for Crew Size Prediction Model" 
+                  className="w-full h-auto rounded-md mb-2 border border-gray-100"
+                />
+                <p className="text-center text-gray-600 font-medium italic text-sm md:text-base leading-relaxed">
+                  Our best crew size prediction model achieves highly accurate predictions across a wide range of event sizes, with points tightly clustered around the ideal 1:1 line.
+                </p>
+              </div>
             </div>
           </div>
         </section>
