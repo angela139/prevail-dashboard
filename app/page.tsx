@@ -39,7 +39,7 @@ export default function Home() {
         {/* Transition Image: Map of Outages */}
         <div className="my-12 bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-200">
           <img 
-            src="/prevail_outage_map.png" 
+            src="prevail_outage_map.png" 
             alt="Geospatial analysis of SDG&E power outages." 
             className="w-full h-auto rounded-md mb-4"
           />
