@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sdge-yellow: #fdd835;
+  --color-sdge-green: #5cb85c;
+  --color-sdge-green-dark: #4caf50;
+  --color-sdge-navy: #003057;
+  --color-sdge-blue: #0055a5;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+}
