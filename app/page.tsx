@@ -36,6 +36,18 @@ export default function Home() {
           </p>
         </section>
 
+        {/* Transition Image: Map of Outages */}
+        <div className="my-12 bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-200">
+          <img 
+            src="/prevail_outage_map.png" 
+            alt="Geospatial analysis of SDG&E power outages." 
+            className="w-full h-auto rounded-md mb-4"
+          />
+          <p className="text-center text-gray-600 font-medium italic text-sm md:text-base leading-relaxed">
+            Geography acts as a &apos;switch&apos; for grid vulnerabilities: coastal zones face equipment failures, while inland regions are dominated by weather-driven risks.
+          </p>
+        </div>
+
         {/* Methods Section */}
         <section id="methods" className="py-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-sdge-navy border-b-4 border-sdge-green pb-3">
