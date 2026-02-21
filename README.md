@@ -1,4 +1,6 @@
-# artifact-directory-template
+# PREVAIL - The Website
+
+Please [CLICK HERE](https://angela139.github.io/prevail-dashboard/) to access our website.
 
 This repository is a template for turning in links/locations to your
 project artifacts. Instructions:
