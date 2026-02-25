@@ -264,7 +264,7 @@ export default function MapVisualization({
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="mb-4">
         <h2 className="text-xl font-semibold text-gray-900">
-          San Diego Outage & Crew Map
+          Crew Allocations
           {(selectedDate || weekStarts[selectedWeek - 1]) &&
             (() => {
               const dateStr = selectedDate || weekStarts[selectedWeek - 1];
