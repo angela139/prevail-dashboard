@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/prevail-dashboard",
+  basePath: process.env.NODE_ENV === "production" ? "/prevail-dashboard" : "",
   images: {
     unoptimized: true,
   },
