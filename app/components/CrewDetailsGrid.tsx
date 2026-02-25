@@ -17,7 +17,7 @@ export default function CrewDetailsGrid({
 }: CrewDetailsGridProps) {
   const selectedWeekStart = selectedDate || weekStarts[selectedWeek - 1];
 
-  // Filter and sort hexes that have data for the selected week
+  // Filter and sort hexes that have data for the selected week.
   const hexesWithData = hexData
     .filter((hex) => hex.weekData[selectedWeekStart])
     .map((hex) => ({
@@ -36,7 +36,7 @@ export default function CrewDetailsGrid({
           ` (${new Date(selectedWeekStart).toLocaleDateString()})`}
       </h3>
       <div className="mb-4 text-sm text-gray-600">
-        Showing {hexesWithData.length} Hexagons with Crew Assignments
+        Showing {hexesWithData.length} Hexagon(s) with Crew Assignments
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {hexesWithData.map((hex) => (
@@ -68,7 +68,7 @@ export default function CrewDetailsGrid({
                 </div>
               )}
               <div>
-                <span className="font-semibold">Temp:</span>{" "}
+                <span className="font-semibold">Temperature:</span>{" "}
                 {hex.weekData.temp_mean_f.toFixed(1)}°F
               </div>
               <div>
@@ -81,7 +81,7 @@ export default function CrewDetailsGrid({
       </div>
       {hexesWithData.length === 0 && (
         <div className="text-center text-gray-500 py-8">
-          No crew data available for this week
+          No crew data is available for this week.
         </div>
       )}
     </div>
