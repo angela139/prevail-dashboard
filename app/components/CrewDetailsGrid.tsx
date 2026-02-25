@@ -36,7 +36,7 @@ export default function CrewDetailsGrid({
           ` (${new Date(selectedWeekStart).toLocaleDateString()})`}
       </h3>
       <div className="mb-4 text-sm text-gray-600">
-        Showing {hexesWithData.length} hexagons with crew assignments
+        Showing {hexesWithData.length} Hexagons with Crew Assignments
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {hexesWithData.map((hex) => (
@@ -55,7 +55,7 @@ export default function CrewDetailsGrid({
               Lat: {hex.lat.toFixed(4)}, Lng: {hex.lng.toFixed(4)}
             </div>
             <div className="text-2xl font-bold text-blue-600 mt-2 mb-1">
-              {hex.weekData.crew_size} crew members
+              {hex.weekData.crew_size} Crew Members
             </div>
             <div className="text-sm text-gray-600">
               Predicted: {(hex.weekData.predicted_crew_size || 0)}
