@@ -77,7 +77,7 @@ export default function Home() {
         {/* Map of Outages */}
         <div className="my-12 bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-200">
           <Image
-            src="/prevail_outage_map.png"
+            src="prevail_outage_map.png"
             alt="Geospatial analysis of SDG&E power outages."
             className="w-full h-auto rounded-md mb-4"
             width={800}
@@ -233,7 +233,7 @@ export default function Home() {
               {/* Image of Crew Size Model Accuracy*/}
               <div className="my-4 bg-white rounded-lg">
                 <Image
-                  src="/prevail_crew_size_model_accuracy.png"
+                  src="prevail_crew_size_model_accuracy.png"
                   alt="Predicted vs. Actual Crew Size for Crew Size Prediction Model"
                   className="w-full h-auto rounded-md mb-2 border border-gray-100"
                   width={800}
