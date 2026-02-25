@@ -70,13 +70,13 @@ export default function WeekSelector({
             <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-4 border border-orange-200">
                 <div className="text-xs font-medium text-orange-700 mb-1">
-                  Temperature Max
+                  Maximum Temperature
                 </div>
                 <div className="text-2xl font-bold text-orange-900">
                   {weatherData.temp_max_f.toFixed(1)}°F
                 </div>
                 <div className="text-xs text-orange-600 mt-1">
-                  Avg: {weatherData.temp_mean_f.toFixed(1)}°F
+                  Average: {weatherData.temp_mean_f.toFixed(1)}°F
                 </div>
               </div>
 
@@ -85,9 +85,9 @@ export default function WeekSelector({
                   Wind Speed
                 </div>
                 <div className="text-2xl font-bold text-blue-900">
-                  {weatherData.wind_max_mph.toFixed(1)} mph
+                  {weatherData.wind_max_mph.toFixed(1)} MPH
                 </div>
-                <div className="text-xs text-blue-600 mt-1">Max speed</div>
+                <div className="text-xs text-blue-600 mt-1">Maximum</div>
               </div>
 
               <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-lg p-4 border border-cyan-200">
@@ -95,9 +95,9 @@ export default function WeekSelector({
                   Wind Gust
                 </div>
                 <div className="text-2xl font-bold text-cyan-900">
-                  {weatherData.gust_max_mph.toFixed(1)} mph
+                  {weatherData.gust_max_mph.toFixed(1)} MPH
                 </div>
-                <div className="text-xs text-cyan-600 mt-1">Max gust</div>
+                <div className="text-xs text-cyan-600 mt-1">Maximum</div>
               </div>
 
               <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-lg p-4 border border-teal-200">
