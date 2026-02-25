@@ -181,15 +181,15 @@ export default function MapVisualization({
             `<div style="padding: 10px; max-width: 300px;">
               <div style="margin: 4px 0;"><strong>Actual Crew Size:</strong> ${props?.crew_size || 0}</div>
               <div style="margin: 4px 0;"><strong>Predicted Crew Size:</strong> ${(props?.predicted_crew_size || 0)}</div>
-              <div style="margin: 4px 0;"><strong>Outage Count:</strong> ${props?.outage_count || 0}</div>
+              <div style="margin: 4px 0;"><strong>Number of Outages:</strong> ${props?.outage_count || 0}</div>
               <hr style="margin: 8px 0; border: 0; border-top: 1px solid #ddd;"/>
               <div style="font-size: 12px; color: #666;">
-                <div><strong>Temp Max:</strong> ${props?.temp_max_f?.toFixed(1)}°F</div>
-                <div><strong>Temp Mean:</strong> ${props?.temp_mean_f?.toFixed(1)}°F</div>
-                <div><strong>Wind Max:</strong> ${props?.wind_max_mph?.toFixed(1)} mph</div>
-                <div><strong>Gust Max:</strong> ${props?.gust_max_mph?.toFixed(1)} mph</div>
-                <div><strong>Humidity Mean:</strong> ${props?.humidity_mean?.toFixed(1)}%</div>
-                <div><strong>Humidity Min:</strong> ${props?.humidity_min?.toFixed(1)}%</div>
+                <div><strong>Maximum Temperature:</strong> ${props?.temp_max_f?.toFixed(1)}°F</div>
+                <div><strong>Mean Temperature:</strong> ${props?.temp_mean_f?.toFixed(1)}°F</div>
+                <div><strong>Maximum Wind Speed:</strong> ${props?.wind_max_mph?.toFixed(1)} MPH</div>
+                <div><strong>Maximum Wind Gust:</strong> ${props?.gust_max_mph?.toFixed(1)} MPH</div>
+                <div><strong>Mean Humidity:</strong> ${props?.humidity_mean?.toFixed(1)}%</div>
+                <div><strong>Minimum Humidity:</strong> ${props?.humidity_min?.toFixed(1)}%</div>
               </div>
             </div>`,
           )
@@ -243,12 +243,12 @@ export default function MapVisualization({
             <div style="margin: 4px 0;"><strong>Outage Count:</strong> ${weekData.outage_count || 0}</div>
             <hr style="margin: 8px 0; border: 0; border-top: 1px solid #ddd;"/>
             <div style="font-size: 12px; color: #666;">
-              <div><strong>Temp Max:</strong> ${weekData.temp_max_f?.toFixed(1)}°F</div>
-              <div><strong>Temp Mean:</strong> ${weekData.temp_mean_f?.toFixed(1)}°F</div>
-              <div><strong>Wind Max:</strong> ${weekData.wind_max_mph?.toFixed(1)} mph</div>
-              <div><strong>Gust Max:</strong> ${weekData.gust_max_mph?.toFixed(1)} mph</div>
-              <div><strong>Humidity Mean:</strong> ${weekData.humidity_mean?.toFixed(1)}%</div>
-              <div><strong>Humidity Min:</strong> ${weekData.humidity_min?.toFixed(1)}%</div>
+              <div><strong>Maximum Temperature:</strong> ${weekData.temp_max_f?.toFixed(1)}°F</div>
+              <div><strong>Mean Temperature:</strong> ${weekData.temp_mean_f?.toFixed(1)}°F</div>
+              <div><strong>Maximum Wind Speed:</strong> ${weekData.wind_max_mph?.toFixed(1)} MPH</div>
+              <div><strong>Maximum Wind Gust:</strong> ${weekData.gust_max_mph?.toFixed(1)} MPH</div>
+              <div><strong>Mean Humidity:</strong> ${weekData.humidity_mean?.toFixed(1)}%</div>
+              <div><strong>Minimum Humidity:</strong> ${weekData.humidity_min?.toFixed(1)}%</div>
             </div>
           </div>`,
         )
