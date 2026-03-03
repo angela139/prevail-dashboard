@@ -355,12 +355,12 @@ export default function MapVisualization({
           <div>
             <p className="font-semibold mb-1">Information:</p>
             <ul className="list-disc list-inside space-y-1 text-xs">
-              <li>Click hexagons to see crew, outage, and weather details</li>
-              <li>Each hexagon represents a geographic area in San Diego</li>
+              <li>Click on the hexagon(s) to see crew, outage, and weather details.</li>
+              <li>Each hexagon represents a geographic area in San Diego.</li>
               <li>
-                Data includes outage count, duration, and weather conditions
+                Data on the number of outages, outage duration, and weather conditions is shown.
               </li>
-              <li>Use the week selector to view different time periods</li>
+              <li>Use the week selector to view different time periods.</li>
             </ul>
           </div>
         </div>

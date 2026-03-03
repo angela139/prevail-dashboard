@@ -7,10 +7,10 @@ export default function DashboardPage() {
       <div className="max-w-6xl mx-auto">
         <Link href="/" className="text-blue-600 hover:underline">Back to Home</Link>
         <h1 className="text-4xl font-bold text-gray-900 mb-2">
-          San Diego Crew Predictions Dashboard
+          PREVAIL - A Crew Allocation Interface for Inclement Weather Conditions in San Diego
         </h1>
         <p className="text-gray-600 mb-8">
-          Historical weather-related outages and AI-powered crew predictions
+          Translating extreme meteorological forecasts into actionable, AI-driven workforce logistics.
         </p>
 
         <DashboardContainer />
