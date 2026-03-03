@@ -277,7 +277,7 @@ export default function MapVisualization({
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="mb-4 flex items-start justify-between gap-4">
         <h2 className="text-xl font-semibold text-gray-900">
-          San Diego Outage & Crew Map
+          Crew Allocations
           {dateStr && formatWeekRange(dateStr)}
         </h2>
         <button
