@@ -14,7 +14,7 @@ import { getHexBoundary } from "./hexUtils";
 export function getDistrictName(
   fc: FeatureCollection,
   lng: number,
-  lat: number
+  lat: number,
 ): string | null {
   const pt = turf.point([lng, lat]);
 
@@ -26,7 +26,7 @@ export function getDistrictName(
       if (
         turf.booleanPointInPolygon(
           pt,
-          feature as Feature<Polygon | MultiPolygon>
+          feature as Feature<Polygon | MultiPolygon>,
         )
       ) {
         return feature.properties?.Name ?? null;
@@ -102,7 +102,7 @@ interface HexProps {
 
 export function buildHexPopupHtml(
   props: HexProps,
-  districtName: string | null
+  districtName: string | null,
 ): string {
   const district = districtName
     ? `<div style="margin:0 0 8px;font-size:12px;color:#dc2626;font-weight:600;letter-spacing:0.02em;">📍 ${districtName}</div>`
@@ -116,26 +116,26 @@ export function buildHexPopupHtml(
       <div style="margin:4px 0;"><strong>Predicted Crew Size:</strong> ${
         props.predicted_crew_size ?? 0
       }</div>
-      <div style="margin:4px 0;"><strong>Outage Count:</strong> ${
+      <div style="margin:4px 0;"><strong>Number of Outages:</strong> ${
         props.outage_count ?? 0
       }</div>
       <hr style="margin:8px 0;border:0;border-top:1px solid #ddd;"/>
       <div style="font-size:12px;color:#666;">
-        <div><strong>Temp Max:</strong> ${props.temp_max_f?.toFixed(1)}°F</div>
-        <div><strong>Temp Mean:</strong> ${props.temp_mean_f?.toFixed(
-          1
+        <div><strong>Maximum Temperature:</strong> ${props.temp_max_f?.toFixed(1)}°F</div>
+        <div><strong>Mean Temperature:</strong> ${props.temp_mean_f?.toFixed(
+          1,
         )}°F</div>
-        <div><strong>Wind Max:</strong> ${props.wind_max_mph?.toFixed(
-          1
-        )} mph</div>
-        <div><strong>Gust Max:</strong> ${props.gust_max_mph?.toFixed(
-          1
-        )} mph</div>
-        <div><strong>Humidity Mean:</strong> ${props.humidity_mean?.toFixed(
-          1
+        <div><strong>Maximum Wind Speed:</strong> ${props.wind_max_mph?.toFixed(
+          1,
+        )} MPH</div>
+        <div><strong>Maximum Wind Gust:</strong> ${props.gust_max_mph?.toFixed(
+          1,
+        )} MPH</div>
+        <div><strong>Mean Humidity:</strong> ${props.humidity_mean?.toFixed(
+          1,
         )}%</div>
-        <div><strong>Humidity Min:</strong> ${props.humidity_min?.toFixed(
-          1
+        <div><strong>Minimum Humidity:</strong> ${props.humidity_min?.toFixed(
+          1,
         )}%</div>
       </div>
     </div>`;
