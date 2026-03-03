@@ -38,7 +38,7 @@ export default function MapVisualization({
     if (!hexData || hexData.length === 0) return [];
     const weeks = new Set<string>();
     hexData.forEach((hex) =>
-      Object.keys(hex.weekData).forEach((week) => weeks.add(week))
+      Object.keys(hex.weekData).forEach((week) => weeks.add(week)),
     );
     return Array.from(weeks).sort();
   }, [hexData]);
@@ -71,7 +71,9 @@ export default function MapVisualization({
 
     const addDistrictsLayer = async () => {
       try {
-        const res = await fetch("/data/service_districts.geojson");
+        const basePath =
+          process.env.NODE_ENV === "production" ? "/prevail-dashboard" : "";
+        const res = await fetch(`${basePath}/data/service_districts.geojson`);
         const geojson = await res.json();
 
         if (map.current!.getSource("service-districts")) return;
@@ -248,7 +250,7 @@ export default function MapVisualization({
         ? getDistrictName(
             districtsGeoJson.current,
             selectedHex.lng,
-            selectedHex.lat
+            selectedHex.lat,
           )
         : null;
 
@@ -355,10 +357,14 @@ export default function MapVisualization({
           <div>
             <p className="font-semibold mb-1">Information:</p>
             <ul className="list-disc list-inside space-y-1 text-xs">
-              <li>Click on the hexagon(s) to see crew, outage, and weather details.</li>
+              <li>
+                Click on the hexagon(s) to see crew, outage, and weather
+                details.
+              </li>
               <li>Each hexagon represents a geographic area in San Diego.</li>
               <li>
-                Data on the number of outages, outage duration, and weather conditions is shown.
+                Data on the number of outages, outage duration, and weather
+                conditions is shown.
               </li>
               <li>Use the week selector to view different time periods.</li>
             </ul>
