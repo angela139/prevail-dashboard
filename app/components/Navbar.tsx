@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
@@ -44,16 +45,26 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="hover:text-sdge-yellow transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith("#") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="hover:text-sdge-yellow transition-colors"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-sdge-yellow transition-colors"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </div>
 
         {/* Mobile hamburger */}
@@ -77,18 +88,29 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-sdge-navy border-t border-white/10 px-6 py-4 flex flex-col gap-3 text-sm font-medium">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) =>
-                handleNavClick(e, link.href, () => setMenuOpen(false))
-              }
-              className="hover:text-sdge-yellow transition-colors py-1"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith("#") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) =>
+                  handleNavClick(e, link.href, () => setMenuOpen(false))
+                }
+                className="hover:text-sdge-yellow transition-colors py-1"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-sdge-yellow transition-colors py-1"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </div>
       )}
     </nav>
