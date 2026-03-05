@@ -117,6 +117,5 @@ export async function loadPredictionsData(): Promise<HexMapData[]> {
     }
   });
 
-  console.log(`Loaded ${hexMap.size} hexagons from predictions_final.csv`);
   return Array.from(hexMap.values());
 }

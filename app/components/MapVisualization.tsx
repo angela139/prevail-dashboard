@@ -302,7 +302,7 @@ export default function MapVisualization({
 
       <div
         ref={mapContainer}
-        style={{ width: "100%", height: "600px" }}
+        style={{ width: "100%", height: "clamp(320px, 50vw, 600px)" }}
         className="rounded border border-gray-200"
       />
 

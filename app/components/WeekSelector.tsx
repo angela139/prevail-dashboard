@@ -22,9 +22,9 @@ export default function WeekSelector({
   weatherData,
 }: WeekSelectorProps) {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-      <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
-        <div className="flex-1 min-w-75">
+    <div className="bg-white rounded-lg shadow-lg p-4 md:p-6 mb-6">
+      <div className="flex flex-col md:flex-row items-start justify-between mb-4 md:mb-6 flex-wrap gap-4">
+        <div className="flex-1 w-full">
           <label
             htmlFor="week-selector"
             className="block text-sm font-medium text-gray-700 mb-2"
@@ -67,8 +67,8 @@ export default function WeekSelector({
 
           {/* Weather Information Boxes */}
           {weatherData && (
-            <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-4 border border-orange-200">
+            <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="bg-linear-to-br from-orange-50 to-orange-100 rounded-lg p-4 border border-orange-200">
                 <div className="text-xs font-medium text-orange-700 mb-1">
                   Maximum Temperature
                 </div>
@@ -80,7 +80,7 @@ export default function WeekSelector({
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200">
+              <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200">
                 <div className="text-xs font-medium text-blue-700 mb-1">
                   Wind Speed
                 </div>
@@ -90,7 +90,7 @@ export default function WeekSelector({
                 <div className="text-xs text-blue-600 mt-1">Maximum</div>
               </div>
 
-              <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-lg p-4 border border-cyan-200">
+              <div className="bg-linear-to-br from-cyan-50 to-cyan-100 rounded-lg p-4 border border-cyan-200">
                 <div className="text-xs font-medium text-cyan-700 mb-1">
                   Wind Gust
                 </div>
@@ -100,7 +100,7 @@ export default function WeekSelector({
                 <div className="text-xs text-cyan-600 mt-1">Maximum</div>
               </div>
 
-              <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-lg p-4 border border-teal-200">
+              <div className="bg-linear-to-br from-teal-50 to-teal-100 rounded-lg p-4 border border-teal-200">
                 <div className="text-xs font-medium text-teal-700 mb-1">
                   Humidity
                 </div>
@@ -113,11 +113,11 @@ export default function WeekSelector({
           )}
         </div>
 
-        <div className="text-right">
+        <div className="w-full text-center md:text-right shrink-0">
           <div className="text-sm font-medium text-gray-700">
             Total Crew Members
           </div>
-          <div className="text-3xl font-bold text-blue-600">
+          <div className="text-2xl md:text-3xl font-bold text-blue-600">
             {typeof totalCrew === "number" && totalCrew % 1 !== 0
               ? totalCrew.toFixed(2)
               : totalCrew}

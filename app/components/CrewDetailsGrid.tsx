@@ -29,8 +29,8 @@ export default function CrewDetailsGrid({
     });
 
   return (
-    <div className="mt-6 bg-white rounded-lg shadow-lg p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">
+    <div className="mt-6 bg-white rounded-lg shadow-lg p-4 md:p-6">
+      <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-4">
         Crew Allocation Details - Week {selectedWeek}
         {selectedWeekStart &&
           ` (${new Date(selectedWeekStart).toLocaleDateString()})`}
@@ -38,12 +38,12 @@ export default function CrewDetailsGrid({
       <div className="mb-4 text-sm text-gray-600">
         Showing {hexesWithData.length} Hexagon(s) with Crew Assignments
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="flex overflow-x-scroll md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {hexesWithData.map((hex) => (
           <div
             key={hex.hex_id}
             onClick={() => onHexSelect?.(hex.hex_id)}
-            className="border border-gray-200 rounded p-3 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer"
+            className="min-w-50 border border-gray-200 rounded p-3 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer"
           >
             <div
               className="font-mono text-xs text-gray-500 mb-2 truncate"
