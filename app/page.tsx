@@ -434,48 +434,49 @@ export default function Home() {
 </section>
 
         {/* Links Section */}
-<section id="links" className="py-16">
-  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
-    Project Resources
-  </h2>
-  
-  <div className="flex flex-wrap gap-4 mb-8">
-    <a
-      href="https://drive.google.com/file/d/1aDDRVbBco3-nBUmyfxG56a_Er-7WwS8c/view?usp=sharing" 
-      className="inline-block px-6 py-3 bg-sdge-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors duration-300"
-    >
-      Full Technical Report
-    </a>
-    <a
-      href="https://github.com/adityasurap/PREVAIL"
-      className="inline-block px-6 py-3 bg-sdge-navy text-white font-semibold rounded-lg hover:bg-sdge-blue transition-colors duration-300"
-    >
-      Project Repository
-    </a>
-    <a
-      href="https://github.com/angela139/prevail-dashboard"
-      className="inline-block px-6 py-3 border-2 border-sdge-navy text-sdge-navy font-semibold rounded-lg hover:bg-sdge-navy hover:text-white transition-all duration-300"
-    >
-      Website Repository
-    </a>
-  </div>
+      <section id="links" className="py-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
+          Project Resources
+        </h2>
 
-  <div className="p-4 bg-gray-50 rounded-lg border-l-4 border-sdge-navy">
-    <p className="text-sm text-gray-600 italic leading-relaxed">
-      <strong>Access Note:</strong> Due to a data privacy agreement with SDG&E, the primary project repository is currently private. Please contact Aditya Surapaneni to request access for academic review.
-    </p>
-  </div>
-</section>
+        <div className="flex flex-wrap gap-4 mb-8">
+          <a
+            href="https://drive.google.com/file/d/1aDDRVbBco3-nBUmyfxG56a_Er-7WwS8c/view?usp=sharing"
+            className="inline-block px-6 py-3 bg-sdge-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors duration-300"
+          >
+            Full Technical Report
+          </a>
+          <a
+            href="https://github.com/adityasurap/PREVAIL"
+            className="inline-block px-6 py-3 bg-sdge-navy text-white font-semibold rounded-lg hover:bg-sdge-blue transition-colors duration-300"
+          >
+            Project Repository
+          </a>
+          <a
+            href="https://github.com/angela139/prevail-dashboard"
+            className="inline-block px-6 py-3 border-2 border-sdge-navy text-sdge-navy font-semibold rounded-lg hover:bg-sdge-navy hover:text-white transition-all duration-300"
+          >
+            Website Repository
+          </a>
+        </div>
 
-      {/* Footer */}
-      <footer className="bg-sdge-navy text-white py-8 mt-16">
-        <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
-          <p className="text-base md:text-lg">
-            DSC 180B &nbsp;|&nbsp; Aditya Surapaneni &middot; Angela Hu &middot;
-            Subika Haider &middot; Suhani Sharma &nbsp;|&nbsp; 2026
+        <div className="p-4 bg-gray-50 rounded-lg border-l-4 border-sdge-navy">
+          <p className="text-sm text-gray-600 italic leading-relaxed">
+            <strong>Access Note:</strong> Due to a data privacy agreement with SDG&E, the primary project repository is currently private. Please contact Aditya Surapaneni to request access for academic review.
           </p>
         </div>
-      </footer>
-    </div>
+      </section> 
+    </main>
+
+    {/* Footer */}
+    <footer className="bg-sdge-navy text-white py-8 mt-16">
+      <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
+        <p className="text-base md:text-lg">
+          DSC 180B &nbsp;|&nbsp; Aditya Surapaneni &middot; Angela Hu &middot;
+          Subika Haider &middot; Suhani Sharma &nbsp;|&nbsp; 2026
+        </p>
+      </div>
+    </footer>
+  </div>
   );
 }
