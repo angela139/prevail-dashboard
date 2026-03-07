@@ -313,11 +313,11 @@ export default function MapVisualization({
             <p className="font-semibold mb-1">Hexagons (Crew Size):</p>
             <ul className="list-disc list-inside space-y-1 text-xs">
               {[
-                ["#fee5d9", "2 crew members"],
-                ["#fcae91", "4 crew members"],
-                ["#fb6a4a", "6 crew members"],
-                ["#de2d26", "8 crew members"],
-                ["#a50f15", "10 crew members"],
+                ["#fee5d9", "2 Crew Members"],
+                ["#fcae91", "4 Crew Members"],
+                ["#fb6a4a", "6 Crew Members"],
+                ["#de2d26", "8 Crew Members"],
+                ["#a50f15", "10 Crew Members"],
               ].map(([color, label]) => (
                 <li key={color}>
                   <span
@@ -348,10 +348,10 @@ export default function MapVisualization({
                     marginRight: "4px",
                   }}
                 />
-                SDG&E service district boundary
+                SDG&E Service District Boundary
               </li>
-              <li>District names are labeled on the map</li>
-              <li>Toggle visibility with the Districts button</li>
+              <li>District names are labeled on the map.</li>
+              <li>Toggle the visibility of the boundaries with the "Hide/Show Districts" button.</li>
             </ul>
           </div>
           <div>
