@@ -79,16 +79,14 @@ export default function Home() {
         {/* Map of Outages */}
         <div className="my-12 bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-200">
           <Image
-            src="prevail_outage_map.png"
-            alt="Geospatial analysis of SDG&E power outages"
+            src="outage_map.png"
+            alt="Geospatial Visualization of SDG&E's Historical Power Outages"
             className="w-full h-auto rounded-md mb-4"
             width={800}
             height={600}
           />
           <p className="text-center text-gray-600 font-medium italic text-sm md:text-base leading-relaxed">
-            Geography acts as a &apos;switch&apos; for grid vulnerabilities:
-            coastal zones face equipment failures, while inland regions are
-            dominated by weather-driven risks.
+            Geospatial distribution of historical power outages across the SDG&E service territory, color-coded by primary cause. The density and variety of these events illustrate the logistical complexity of coordinating a proactive emergency response.
           </p>
         </div>
 
@@ -169,27 +167,30 @@ export default function Home() {
     {/* Model Performance Graphic */}
     <div className="my-8 bg-white p-6 rounded-xl border border-gray-200 shadow-md">
       <Image
-        src="/images/model_error.png"
-        alt="Predicted vs. Actual Crew Size Accuracy Graph"
+        src="model_error.png"
+        alt="Predicted vs. Actual Crew Size Accuracy Graph for the LASSO Model"
         className="w-full h-auto rounded-md mb-4"
         width={800}
         height={600}
       />
       <p className="text-center text-gray-700 italic">
-        Our model achieves <strong>over 70% operational accuracy</strong>, meaning the majority of our staging predictions are within ±1 person of the actual need.
+        Regression parity plot for the LASSO model. The results demonstrate high precision for standard, low-volume crew dispatches, while showing increased variance and a tendency to underestimate for rare, high-capacity emergency events.
       </p>
     </div>
   </div>
 
   {/* Dashboard Integration */}
-  <div className="mb-6">
-    <h3 className="text-2xl font-bold mb-4 text-sdge-navy">
-      From Code to Control Room
-    </h3>
-    <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-      To make these predictions useful, we built a custom web dashboard using <strong>Next.js</strong>. Every week, the model processes weather forecasts and generates a simple file that the dashboard turns into a color-coded map. This allows dispatchers to see "high-risk" hexagons in red and instantly know exactly how many crews to send to each district—turning complex math into a life-saving logistical tool.
-    </p>
-  </div>
+<div className="mb-6">
+  <h3 className="text-2xl font-bold mb-4 text-sdge-navy">
+    From Code to Control Room
+  </h3>
+  <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+    To prove our system works in the real world, we built an interactive dashboard using <strong>Next.js</strong>. Because our dataset covers 2021 to 2025, the dashboard currently acts as a powerful <strong>retrospective tool</strong>. 
+  </p>
+  <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+    Users can select past storm weeks to see exactly how our model would have performed. The system processes those historical weather logs and generates a color-coded map, allowing us to validate our "high-risk" red hexagons against actual past dispatches. This proves that the framework is ready to be connected to live weather APIs for real-time, life-saving logistical planning in the future.
+  </p>
+</div>
 </section>
 
         {/* Results Section */}
@@ -210,21 +211,21 @@ export default function Home() {
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              { label: "Final MAE", value: "0.89", unit: "crew members" },
+              { label: "Final MAE", value: "0.89", unit: "Crew Members" },
               {
                 label: "Operational Accuracy",
                 value: ">70%",
-                unit: "within ±1 person",
+                unit: "Within ±1 Person",
               },
               {
                 label: "Training Samples",
                 value: "1,500+",
-                unit: "storm responses",
+                unit: "Storm Responses",
               },
               {
                 label: "Weather Readings",
                 value: "75M+",
-                unit: "hourly records",
+                unit: "Hourly Records",
               },
             ].map((stat) => (
               <div
