@@ -509,7 +509,7 @@ export default function Home() {
 
         <div className="flex flex-wrap gap-4 mb-8">
           <a
-            href="https://drive.google.com/file/d/1aDDRVbBco3-nBUmyfxG56a_Er-7WwS8c/view?usp=sharing"
+            href="https://drive.google.com/file/d/16w2mj_5NbRraMXm2SwYJ1Rj6MAptrRpT/view?usp=sharing"
             className="inline-block px-6 py-3 bg-sdge-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors duration-300"
           >
             Project Report
