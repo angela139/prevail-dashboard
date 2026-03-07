@@ -191,6 +191,41 @@ export default function Home() {
     Users can select past storm weeks to see exactly how our model would have performed. The system processes those historical weather logs and generates a color-coded map, allowing us to validate our "high-risk" red hexagons against actual past dispatches. This proves that the framework is ready to be connected to live weather APIs for real-time, life-saving logistical planning in the future.
   </p>
 </div>
+
+  {/* What We Built vs. Reused */}
+  <div className="mt-10">
+    <h3 className="text-2xl font-bold mb-4 text-sdge-navy">
+      What We Built vs. What We Reused
+    </h3>
+    <p className="text-lg md:text-xl mb-6 text-gray-700 leading-relaxed">
+      PREVAIL is built on a foundation of industry-standard open-source tools, but the core intellectual contribution — the data pipeline, feature engineering, modeling strategy, and dashboard — was designed and implemented entirely by our team.
+    </p>
+    <div className="grid md:grid-cols-2 gap-6">
+      <div className="bg-white p-6 rounded-xl border-l-4 border-sdge-green shadow-sm">
+        <h4 className="font-bold text-sdge-navy mb-4 text-lg">Built by Our Team</h4>
+        <ul className="space-y-2 text-gray-700 text-base">
+          <li>• End-to-end ETL pipeline merging outage, dispatch, and weather datasets</li>
+          <li>• H3 hexagon grid mapping strategy to spatially unify disparate data sources</li>
+          <li>• 200+ engineered features (lag windows, thermal stress, neighbor aggregation)</li>
+          <li>• Stacking ensemble architecture (LASSO + XGBoost meta-learner)</li>
+          <li>• Interactive Next.js dashboard with week selection, hex map, and dispatch cards</li>
+          <li>• Color-coded Mapbox visualization layer with per-hex drill-down</li>
+        </ul>
+      </div>
+      <div className="bg-white p-6 rounded-xl border-l-4 border-sdge-blue shadow-sm">
+        <h4 className="font-bold text-sdge-navy mb-4 text-lg">Tools &amp; Libraries Reused</h4>
+        <ul className="space-y-2 text-gray-700 text-base">
+          <li>• <strong>scikit-learn</strong> — LASSO regression and stacking framework</li>
+          <li>• <strong>XGBoost</strong> — gradient boosted tree model with Poisson objective</li>
+          <li>• <strong>Pandas / NumPy</strong> — data cleaning and feature computation</li>
+          <li>• <strong>H3 (Uber)</strong> — hexagonal hierarchical geospatial indexing</li>
+          <li>• <strong>Mapbox GL JS</strong> — interactive map rendering</li>
+          <li>• <strong>Next.js / React</strong> — dashboard frontend framework</li>
+          <li>• <strong>Tailwind CSS</strong> — UI styling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
         {/* Results Section */}
@@ -322,7 +357,40 @@ export default function Home() {
     </div>
   </div>
 
-  <div className="mt-16 p-8 bg-sdge-navy rounded-2xl text-white">
+  {/* How to Interpret Results */}
+  <details className="mt-16 mb-8 bg-gray-50 p-6 rounded-xl border border-gray-200 cursor-pointer">
+    <summary className="font-bold text-sdge-navy text-xl">
+      How to Read the Results: Signal vs. Noise
+    </summary>
+    <div className="mt-6 space-y-6 text-gray-700">
+      <div>
+        <h4 className="font-bold text-sdge-navy mb-2">What the map colors mean</h4>
+        <p className="text-base leading-relaxed">
+          Hex cells are colored on a gradient from <strong className="text-red-300">light red</strong> (low predicted crew demand) to <strong className="text-red-700">dark red</strong> (high predicted crew demand). A dark red cell is a meaningful signal, as it means the model identified a confluence of weather stressors (high winds, thermal stress, neighbor pressure) that historically required larger dispatch teams. A light red cell in an otherwise calm week is expected baseline noise and does not warrant action on its own.
+        </p>
+      </div>
+      <div>
+        <h4 className="font-bold text-sdge-navy mb-2">When a prediction is reliable</h4>
+        <p className="text-base leading-relaxed">
+          The model performs best for standard dispatch sizes of <strong>2–3 crew members</strong>, which account for the majority of historical events. In this range, over 70% of predictions land within ±1 person of the actual dispatch. A cluster of adjacent red hexes reinforces the signal, widespread high-risk zones are far more actionable than a single isolated red cell, which may reflect localized sensor noise or a data gap.
+        </p>
+      </div>
+      <div>
+        <h4 className="font-bold text-sdge-navy mb-2">When to apply extra caution</h4>
+        <p className="text-base leading-relaxed">
+          For rare, high-severity events requiring <strong>5+ crew members</strong>, the model tends to <em>underestimate</em>. This is a known limitation of training on historically sparse extreme events. If weather forecasts indicate an unusually severe storm (e.g., wind gusts exceeding historical norms), treat the model&apos;s crew estimate as a <strong>floor, not a ceiling</strong>, and add a buffer based on dispatcher judgment.
+        </p>
+      </div>
+      <div>
+        <h4 className="font-bold text-sdge-navy mb-2">MAE in plain terms</h4>
+        <p className="text-base leading-relaxed">
+          An MAE of <strong>0.89</strong> means that on average, the model is off by less than one person. In practice, this is operationally insignificant for small crews, but for a dispatch of 8 it could mean the difference between 7 and 9 — so predictions above 4 should always be reviewed alongside weather severity and local infrastructure context before finalizing a staging order.
+        </p>
+      </div>
+    </div>
+  </details>
+
+  <div className="mt-8 p-8 bg-sdge-navy rounded-2xl text-white">
     <h3 className="text-2xl font-bold mb-4">The Verdict</h3>
     <p className="text-lg leading-relaxed">
       By comparing our AI&apos;s predictions to years of real SDG&E logs, we found that <strong>over 70%</strong> of our predictions 
