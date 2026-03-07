@@ -196,7 +196,7 @@ export default function Home() {
         {/* Results Section */}
 <section id="results" className="py-16">
   <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
-    Results & Impact
+    Results
   </h2>
   <p className="text-lg md:text-xl mb-10 text-gray-700 leading-relaxed">
     PREVAIL isn't just a set of numbers; it's a living tool. We’ve turned our complex machine learning models into an interactive dashboard that helps utility managers &quot;see&quot; into the past to better plan for the future. By validating our model against real-world historical storms, we’ve proven that data-driven staging is ready for the real world.
@@ -334,107 +334,72 @@ export default function Home() {
 </section>
 
         {/* Discussion Section */}
-        <section id="discussion" className="py-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-sdge-navy border-b-4 border-sdge-blue pb-3">
-            Discussion
-          </h2>
-          <p className="text-lg md:text-xl mb-10 text-gray-700 leading-relaxed">
-            The PREVAIL framework demonstrates that translating meteorological
-            telemetry into actionable workforce logistics is not only
-            mathematically viable but operationally superior to traditional
-            &quot;wait-and-see&quot; dispatching. However, while the stacking
-            ensemble achieves high accuracy within a ±1 crew member tolerance,
-            several factors influence the remaining error variance and the
-            current scope of the dashboard.
-          </p>
+<section id="discussion" className="py-16">
+  <h2 className="text-3xl md:text-4xl font-bold mb-8 text-sdge-navy border-b-4 border-sdge-blue pb-3">
+    Discussion
+  </h2>
+  <p className="text-lg md:text-xl mb-10 text-gray-700 leading-relaxed">
+    PREVAIL proves that we can turn weather data into a strategic roadmap for utility crews. While our AI is highly accurate, real-world engineering always comes with unique hurdles. We believe in being transparent about where our model stands today and where we plan to take it tomorrow.
+  </p>
 
-          {/* Limitations */}
-          <div className="mb-10">
-            <h3 className="text-2xl font-bold mb-5 text-sdge-navy">
-              Limitations
-            </h3>
-            <div className="space-y-4">
-              <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-200 border-l-4 border-l-sdge-yellow">
-                <p className="font-semibold text-sdge-navy mb-2">
-                  Human Judgment in Dispatch
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  A portion of error variance is driven by field-level judgment
-                  calls, shifting control room priorities, and administrative
-                  nuances not captured by physical weather telemetry. Even a
-                  perfect meteorological model cannot account for every
-                  deviation in personnel assignment.
-                </p>
-              </div>
-              <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-200 border-l-4 border-l-sdge-yellow">
-                <p className="font-semibold text-sdge-navy mb-2">
-                  Spatial Resolution Mismatch
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  SORT dispatch logs are aggregated at the ZIP code level while
-                  weather data is recorded at specific station coordinates. The
-                  12-hour spatial proxy used to link these sources within the H3
-                  grid — while robust — introduces a minor degree of geographic
-                  uncertainty that can affect localized predictions.
-                </p>
-              </div>
-              <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-200 border-l-4 border-l-sdge-yellow">
-                <p className="font-semibold text-sdge-navy mb-2">
-                  Data Privacy Constraints
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Due to the sensitive nature of utility infrastructure, certain
-                  granular details regarding asset vulnerability and grid
-                  configurations were omitted from the public-facing dashboard.
-                  These restrictions, while necessary for security, limit the
-                  level of contextual detail available to the end-user.
-                </p>
-              </div>
-            </div>
-          </div>
+  {/* Challenges & Limitations */}
+  <div className="mb-16">
+    <h3 className="text-2xl font-bold mb-6 text-sdge-navy flex items-center">
+      <span className="bg-sdge-yellow w-2 h-8 mr-3 rounded-full"></span>
+      Current Challenges
+    </h3>
+    <div className="grid md:grid-cols-3 gap-6">
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h4 className="font-bold text-sdge-navy mb-3">The Human Element</h4>
+        <p className="text-gray-600 text-base leading-relaxed">
+          AI can predict a storm, but it can&apos;t always predict a last-minute judgment call in the dispatch room. Sometimes, human priorities change in ways that raw weather data just can&apos;t see.
+        </p>
+      </div>
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h4 className="font-bold text-sdge-navy mb-3">Map Resolution</h4>
+        <p className="text-gray-600 text-base leading-relaxed">
+          While our &quot;honeycomb&quot; grid is robust, linking ZIP-code-level logs to specific GPS stations creates a small amount of &quot;geographic noise&quot;. This is an area we are constantly refining.
+        </p>
+      </div>
+      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h4 className="font-bold text-sdge-navy mb-3">Data Privacy</h4>
+        <p className="text-gray-600 text-base leading-relaxed">
+          To keep the grid secure, we omitted highly sensitive infrastructure details from the public dashboard. Security is our priority, even if it means showing less detail to the public.
+        </p>
+      </div>
+    </div>
+  </div>
 
-          {/* Future Work */}
-          <div>
-            <h3 className="text-2xl font-bold mb-5 text-sdge-navy">
-              Future Work
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
-                <p className="font-bold text-sdge-navy mb-2">
-                  Real-Time API Integration
-                </p>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  Integrating a live weather API would allow the model to
-                  generate dynamic, on-the-fly workforce forecasts as storms
-                  evolve — rather than relying on batch-processed historical
-                  telemetry.
-                </p>
-              </div>
-              <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
-                <p className="font-bold text-sdge-navy mb-2">
-                  Logistical Refinement
-                </p>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  Incorporating real-time traffic and road closure data would
-                  allow the pipeline to adjust staging recommendations based on
-                  actual crew travel times to incident locations during adverse
-                  conditions.
-                </p>
-              </div>
-              <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
-                <p className="font-bold text-sdge-navy mb-2">
-                  Multimodal Failure Prediction
-                </p>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  The Poisson architecture could be extended to predict specific
-                  equipment failures — such as transformer blowouts versus
-                  vegetation-related line faults — mapping hardware needs
-                  alongside crew sizes for a truly holistic logistics solution.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+  {/* Future Work - The Road Ahead */}
+  <div>
+    <h3 className="text-2xl font-bold mb-6 text-sdge-navy flex items-center">
+      <span className="bg-sdge-green w-2 h-8 mr-3 rounded-full"></span>
+      The Road Ahead
+    </h3>
+    <div className="space-y-6">
+      <div className="flex flex-col md:flex-row gap-6 items-start bg-gray-50 p-6 rounded-2xl border border-gray-100">
+        <div className="md:w-1/4 font-bold text-sdge-navy text-xl">Real-Time Forecasting</div>
+        <div className="md:w-3/4 text-gray-700 leading-relaxed">
+          The next step is simple: plug in a live weather API. This would allow PREVAIL to generate &quot;on-the-fly&quot; staging orders as storms evolve in real-time, rather than looking only at historical data.
+        </div>
+      </div>
+      
+      <div className="flex flex-col md:flex-row gap-6 items-start bg-gray-50 p-6 rounded-2xl border border-gray-100">
+        <div className="md:w-1/4 font-bold text-sdge-navy text-xl">Traffic & Logistics</div>
+        <div className="md:w-3/4 text-gray-700 leading-relaxed">
+          By adding live road closure and traffic data, we can tell crews not just <em>how many</em> people are needed, but exactly <em>how long</em> it will take to get there during a storm.
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-6 items-start bg-gray-50 p-6 rounded-2xl border border-gray-100">
+        <div className="md:w-1/4 font-bold text-sdge-navy text-xl">Hardware Predictions</div>
+        <div className="md:w-3/4 text-gray-700 leading-relaxed">
+          We want to predict more than just crew size—we want to predict <strong>gear</strong>. Future versions could forecast whether a team needs a new transformer or just a vegetation clearing kit.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Conclusion Section */}
         <section id="conclusion" className="py-16">
