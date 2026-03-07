@@ -433,7 +433,10 @@ export default function Home() {
   </div>
 </section>
 
-        {/* Links Section */}
+        Here is the updated Links Section including the fourth button for your project poster. I've maintained the styling to ensure it fits the visual hierarchy of your other resources.
+
+TypeScript
+      {/* Links Section */}
       <section id="links" className="py-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
           Project Resources
@@ -444,14 +447,24 @@ export default function Home() {
             href="https://drive.google.com/file/d/1aDDRVbBco3-nBUmyfxG56a_Er-7WwS8c/view?usp=sharing"
             className="inline-block px-6 py-3 bg-sdge-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors duration-300"
           >
-            Full Technical Report
+            Project Report
           </a>
+          
+          {/* Project Poster Button */}
+          <a
+            href="https://drive.google.com/file/d/1KsqX11ybkPWF1jv9Z1-Hk2r8OQH_xg4M/view?usp=sharing" 
+            className="inline-block px-6 py-3 border-2 border-sdge-green text-sdge-green font-semibold rounded-lg hover:bg-sdge-green hover:text-white transition-all duration-300"
+          >
+            Project Poster
+          </a>
+
           <a
             href="https://github.com/adityasurap/PREVAIL"
             className="inline-block px-6 py-3 bg-sdge-navy text-white font-semibold rounded-lg hover:bg-sdge-blue transition-colors duration-300"
           >
             Project Repository
           </a>
+          
           <a
             href="https://github.com/angela139/prevail-dashboard"
             className="inline-block px-6 py-3 border-2 border-sdge-navy text-sdge-navy font-semibold rounded-lg hover:bg-sdge-navy hover:text-white transition-all duration-300"
@@ -465,7 +478,7 @@ export default function Home() {
             <strong>Access Note:</strong> Due to a data privacy agreement with SDG&E, the primary project repository is currently private. Please contact Aditya Surapaneni to request access for academic review.
           </p>
         </div>
-      </section> 
+      </section>
     </main>
 
     {/* Footer */}
