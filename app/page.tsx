@@ -204,24 +204,24 @@ export default function Home() {
       <div className="bg-white p-6 rounded-xl border-l-4 border-sdge-green shadow-sm">
         <h4 className="font-bold text-sdge-navy mb-4 text-lg">Built by Our Team</h4>
         <ul className="space-y-2 text-gray-700 text-base">
-          <li>• End-to-end ETL pipeline merging outage, dispatch, and weather datasets</li>
-          <li>• H3 hexagon grid mapping strategy to spatially unify disparate data sources</li>
-          <li>• 200+ engineered features (lag windows, thermal stress, neighbor aggregation)</li>
-          <li>• Stacking ensemble architecture (LASSO + XGBoost meta-learner)</li>
-          <li>• Interactive Next.js dashboard with week selection, hex map, and dispatch cards</li>
-          <li>• Color-coded Mapbox visualization layer with per-hex drill-down</li>
+          <li>• End-to-end ETL pipeline merging outage, dispatch, and weather datasets.</li>
+          <li>• H3 hexagon grid mapping strategy to spatially unify disparate data sources.</li>
+          <li>• 200+ engineered features. (Lag windows, thermal stress, neighbor aggregation, etc.)</li>
+          <li>• Stacking ensemble architecture. (LASSO + XGBoost Meta-Learner)</li>
+          <li>• Interactive Next.js dashboard with week selection, hex map, and dispatch cards.</li>
+          <li>• Color-coded Mapbox visualization layer with per-hex drill-down.</li>
         </ul>
       </div>
       <div className="bg-white p-6 rounded-xl border-l-4 border-sdge-blue shadow-sm">
         <h4 className="font-bold text-sdge-navy mb-4 text-lg">Tools &amp; Libraries Reused</h4>
         <ul className="space-y-2 text-gray-700 text-base">
-          <li>• <strong>scikit-learn</strong> — LASSO regression and stacking framework</li>
-          <li>• <strong>XGBoost</strong> — gradient boosted tree model with Poisson objective</li>
-          <li>• <strong>Pandas / NumPy</strong> — data cleaning and feature computation</li>
-          <li>• <strong>H3 (Uber)</strong> — hexagonal hierarchical geospatial indexing</li>
-          <li>• <strong>Mapbox GL JS</strong> — interactive map rendering</li>
-          <li>• <strong>Next.js / React</strong> — dashboard frontend framework</li>
-          <li>• <strong>Tailwind CSS</strong> — UI styling</li>
+          <li>• <strong>Scikit-Learn</strong> — LASSO Regression and Stacking Ensemble Framework</li>
+          <li>• <strong>XGBoost</strong> — Gradient boosted tree model with Poisson objective function.</li>
+          <li>• <strong>Pandas / NumPy</strong> — Data cleaning and feature computation.</li>
+          <li>• <strong>H3 (Uber)</strong> — Hexagonal hierarchical geospatial indexing.</li>
+          <li>• <strong>Mapbox GL JS</strong> — Interactive map rendering.</li>
+          <li>• <strong>Next.js / React</strong> — Dashboard Frontend Framework</li>
+          <li>• <strong>Tailwind CSS</strong> — UI Styling</li>
         </ul>
       </div>
     </div>
