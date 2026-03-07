@@ -433,9 +433,6 @@ export default function Home() {
   </div>
 </section>
 
-        Here is the updated Links Section including the fourth button for your project poster. I've maintained the styling to ensure it fits the visual hierarchy of your other resources.
-
-TypeScript
       {/* Links Section */}
       <section id="links" className="py-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
