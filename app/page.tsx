@@ -402,61 +402,70 @@ export default function Home() {
 </section>
 
         {/* Conclusion Section */}
-        <section id="conclusion" className="py-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-green pb-3">
-            Impact &amp; Conclusion
-          </h2>
-          <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
-            The PREVAIL framework successfully demonstrates that the transition
-            from reactive to proactive grid management is not only
-            mathematically viable but operationally essential. By shifting the
-            analytical focus from traditional outage probability to explicit
-            resource quantification, this project provides a scalable template
-            for utility operators to manage the increasing volatility of extreme
-            weather. The stacking ensemble proves that even within the complex,
-            non-linear environment of storm response, machine learning can
-            deliver reliable, localized logistics that bridge the gap between
-            meteorological data and field-level action.
-          </p>
-          <p className="text-lg md:text-xl mb-4 text-gray-700 leading-relaxed">
-            The broader impact of this work extends beyond operational
-            efficiency — it directly affects community resilience. For utility
-            providers like SDG&E, the ability to accurately stage crews before a
-            weather event makes landfall means significantly reducing expensive
-            standby contractor costs and, more importantly, minimizing the
-            duration of power interruptions for critical infrastructure and
-            residents.
-          </p>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            As extreme weather events continue to grow in frequency and
-            intensity, tools like PREVAIL will be fundamental in ensuring that
-            the energy grid remains a reliable backbone for society — turning
-            the &quot;wait-and-see&quot; approach of the past into a data-driven
-            standard for the future.
-          </p>
-        </section>
+<section id="conclusion" className="py-16">
+  <h2 className="text-3xl md:text-4xl font-bold mb-8 text-sdge-navy border-b-4 border-sdge-green pb-3">
+    Conclusion
+  </h2>
+  
+  <div className="bg-sdge-navy text-white p-8 md:p-12 rounded-3xl shadow-xl">
+    <p className="text-xl md:text-2xl mb-8 leading-relaxed font-light">
+      PREVAIL proves that we no longer have to wait for the lights to go out before we act. By turning complex weather data into exact workforce numbers, we&apos;ve built a template for a more resilient, proactive energy grid.
+    </p>
+
+    <div className="grid md:grid-cols-2 gap-8 mb-8">
+      <div>
+        <h3 className="text-sdge-green text-xl font-bold mb-3 uppercase tracking-wider">For the Utility</h3>
+        <p className="text-gray-300 leading-relaxed">
+          Accurate staging means drastically reducing the cost of keeping contract crews on standby. It turns a &quot;guess&quot; into a data-driven strategy, ensuring every dollar spent on storm response is used efficiently.
+        </p>
+      </div>
+      <div>
+        <h3 className="text-sdge-green text-xl font-bold mb-3 uppercase tracking-wider">For the Community</h3>
+        <p className="text-gray-300 leading-relaxed">
+          More importantly, PREVAIL helps get the power back on faster. By having the right teams in the right place before a storm hits, we can minimize downtime for hospitals, businesses, and families.
+        </p>
+      </div>
+    </div>
+
+    <p className="text-lg md:text-xl border-t border-white/20 pt-8 leading-relaxed">
+      As extreme weather becomes more frequent, tools like PREVAIL will be the backbone of a reliable society. We are proud to set a new data-driven standard—turning the &quot;wait-and-see&quot; approach of the past into a proactive promise for the future.
+    </p>
+  </div>
+</section>
 
         {/* Links Section */}
-        <section id="links" className="py-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
-            Learn More
-          </h2>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#"
-              className="inline-block px-6 py-3 bg-sdge-green text-white font-semibold rounded-lg hover:bg-sdge-green-dark transition-colors duration-300"
-            >
-              Full Report
-            </a>
-            <a
-              href="#"
-              className="inline-block px-6 py-3 bg-sdge-navy text-white font-semibold rounded-lg hover:bg-sdge-blue transition-colors duration-300"
-            >
-              GitHub Repository
-            </a>
-          </div>
-        </section>
-      </main>
+<section id="links" className="py-16">
+  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sdge-navy border-b-4 border-sdge-yellow pb-3">
+    Project Resources
+  </h2>
+  
+  <div className="flex flex-wrap gap-4 mb-8">
+    <a
+      href="https://drive.google.com/file/d/1aDDRVbBco3-nBUmyfxG56a_Er-7WwS8c/view?usp=sharing" 
+      className="inline-block px-6 py-3 bg-sdge-green text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors duration-300"
+    >
+      Full Technical Report
+    </a>
+    <a
+      href="https://github.com/adityasurap/PREVAIL"
+      className="inline-block px-6 py-3 bg-sdge-navy text-white font-semibold rounded-lg hover:bg-sdge-blue transition-colors duration-300"
+    >
+      Project Repository
+    </a>
+    <a
+      href="https://github.com/angela139/prevail-dashboard"
+      className="inline-block px-6 py-3 border-2 border-sdge-navy text-sdge-navy font-semibold rounded-lg hover:bg-sdge-navy hover:text-white transition-all duration-300"
+    >
+      Website Repository
+    </a>
+  </div>
+
+  <div className="p-4 bg-gray-50 rounded-lg border-l-4 border-sdge-navy">
+    <p className="text-sm text-gray-600 italic leading-relaxed">
+      <strong>Access Note:</strong> Due to a data privacy agreement with SDG&E, the primary project repository is currently private. Please contact Aditya Surapaneni to request access for academic review.
+    </p>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-sdge-navy text-white py-8 mt-16">
