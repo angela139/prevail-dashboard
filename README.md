@@ -6,7 +6,7 @@ The dashboard lets utility managers select a historical storm week and instantly
 
 ## Project Links
 
-- **Report:** [Link to Report](https://drive.google.com/file/d/1aDDRVbBco3-nBUmyfxG56a_Er-7WwS8c/view)
+- **Report:** [Link to Report](https://drive.google.com/file/d/16w2mj_5NbRraMXm2SwYJ1Rj6MAptrRpT/view?usp=sharing)
 - **Poster:** [Link to Poster](https://drive.google.com/file/d/1KsqX11ybkPWF1jv9Z1-Hk2r8OQH_xg4M/view)
 - **Website:** [Link to Website](https://angela139.github.io/prevail-dashboard/)
 - **Project Repository (private):** [Link to Project Repository](https://github.com/adityasurap/PREVAIL) 
