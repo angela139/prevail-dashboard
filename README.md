@@ -1,29 +1,56 @@
 # PREVAIL - The Website
 
-Please [CLICK HERE](https://angela139.github.io/prevail-dashboard/) to access our website.
+**PREVAIL** (Predictive Response for Emergency Volume Assessment in Incident Locations) is an interactive data science dashboard built for San Diego Gas & Electric (SDG&E). It uses an ensemble machine learning model trained on historical outage, weather, and dispatch records from 2021–2025 to predict the number of repair crew members needed during weather-driven power outages.
 
-This repository is a template for turning in links/locations to your
-project artifacts. Instructions:
+The dashboard lets utility managers select a historical storm week and instantly see a color-coded H3 hexagon map of the SDG&E service territory, summarizing predicted crew demand by region alongside key weather metrics. Below the map, actionable dispatch cards provide GPS coordinates and exact crew counts, turning AI predictions into concrete staging orders.
 
-1. Fork this repository.
-   * You will be changing the file contents in this repository, but
-     *do not change the file names!*
-2. Replace the blank `report.pdf` with your final project report. This is the version that will be linked at [hdsishowcase.com](https://hdsishowcase.com). (Note that you will also have to upload your report separately to Gradescope for your mentor to grade it.)
-3. Edit `title-abstract.txt` and replace the sample title/abstract
-   with the title/abstract of your project. This is what will be included at [hdsishowcase.com](https://hdsishowcase.com).
-   * Be sure to leave the formatting of the file intact (with the
-     `title:` and `abstract:` lines untouched).
-   * If you are happy with the title that's currently at [hdsishowcase.com](https://hdsishowcase.com), feel free to put the same one.
-4. Edit the `artifacts.json` file with links to your project
-   artifacts. Do NOT change the keys of the json file, only the
-   values.
-   * `this-repository` contains the GitHub URL to your forked
-     `artifact-directory-template` repository (this will allow us to
-     get the latest version of your report and title/abstract).
-   * `project-repository` contains the GitHub URL to your project's code repository. This is the repository we will use to evaluate your code.
-   * `project-website-url` contains the URL to your public-facing project website (likely ending in .github.io/<some project name>).
-   * `project-website-code` contains the GitHub URL to your project
-     website's source code (if it's the same as your code repository,
-     then re-list that URL here).
-5. Turn in the forked repository to Gradescope **as a group** (that is, make only one submission).
-   * The autograder on Gradescope just ensures that you submitted everything in the correct format.
+## Project Links
+
+- **Report:** [Link to Report](https://drive.google.com/file/d/1aDDRVbBco3-nBUmyfxG56a_Er-7WwS8c/view)
+- **Poster:** [Link to Poster](https://drive.google.com/file/d/1KsqX11ybkPWF1jv9Z1-Hk2r8OQH_xg4M/view)
+- **Website:** [Link to Website](https://angela139.github.io/prevail-dashboard/)
+- **Project Repository (private):** [Link to Project Repository](https://github.com/adityasurap/PREVAIL) 
+
+---
+
+## Running the Website Locally
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env.local` file in the project root and add your [Mapbox](https://www.mapbox.com/) token:
+
+   ```
+   NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token_here
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm run start
+```
