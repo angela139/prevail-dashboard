@@ -537,12 +537,6 @@ export default function Home() {
             Website Repository
           </a>
         </div>
-
-        <div className="p-4 bg-gray-50 rounded-lg border-l-4 border-sdge-navy">
-          <p className="text-sm text-gray-600 italic leading-relaxed">
-            <strong>Access Note:</strong> Due to a data privacy agreement with SDG&E, the primary project repository is currently private. Please contact Aditya Surapaneni to request access for academic review.
-          </p>
-        </div>
       </section>
     </main>
 
